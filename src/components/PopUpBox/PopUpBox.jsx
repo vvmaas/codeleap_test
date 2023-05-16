@@ -10,9 +10,11 @@ export default function CenterBox({children, ...props}) {
 }
 
 const Container = styled.div`
-    height: 27vh;
-    width: 45vh;
+    height: fit-content;
+    width: fit-content;
     background-color: white;
     border: 1px solid #CCCCCC;
     border-radius: 16px;
+    display: flex;
+    justify-content: center;
 `

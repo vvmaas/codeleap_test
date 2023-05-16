@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CenterBox from "../../components/PopUpBox/PopUpBox";
+import PopUpBox from "../../components/PopUpBox/PopUpBox";
+import SignUpContent from "../../components/PopUpBox/SignUpContent";
 import styled from "styled-components";
 
 export default function SignUp() {
     return(
         <Container>
-            <CenterBox>
-                derecha
-            </CenterBox>
+            <PopUpBox>
+                <SignUpContent />
+            </PopUpBox>
         </Container>
     );
 }

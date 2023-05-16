@@ -10,8 +10,8 @@ export default function SignUpContent() {
 
     const navigate = useNavigate();
 
-    function submit(event) {
-        event.preventDefault();
+    function submit(e) {
+        e.preventDefault();
 
         navigate('/home');
     }
@@ -19,7 +19,6 @@ export default function SignUpContent() {
     return(
         <Container>
             <Title>Welcome to CodeLeap network!</Title>
-
             <form onSubmit={submit}>
                 <div>
                     <h4>Please enter your username</h4>
@@ -50,8 +49,6 @@ const Container = styled.div`
         margin-bottom: 13px;
         width: 25vw;
         min-width: 350px;
-        font-size: 17px;
-        padding: 5px;
     }
 `
 

@@ -18,6 +18,8 @@ const StyledButton = styled.button`
   width: 5vw;
   min-height: 30px;
   min-width: 60px;
+  max-height: 40px;
+  max-width: 140px;
   display: flex;
   align-items: center;
   justify-content: center;

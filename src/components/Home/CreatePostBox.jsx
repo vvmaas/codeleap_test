@@ -35,12 +35,13 @@ export default function CreatePostBox() {
     )
 }
 
-const Container = styled.div`
+export const Container = styled.div`
     background: #FFFFFF;
     width: 100%;
     max-width: 800px;
     height: fit-content;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 `

@@ -1,6 +1,6 @@
 import useAsync from '../useAsync';
 
-import * as postApi from '../../actions/postApi';
+import * as postApi from '../../actions/api/postApi';
 
 export default function usePosts() {  
   const {

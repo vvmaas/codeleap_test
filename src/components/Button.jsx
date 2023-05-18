@@ -24,4 +24,7 @@ const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   cursor: ${(props) => (props.disabled ? '' : 'pointer')};
+  :hover {
+    background-color: ${(props) => (props.disabled ? '#DDDDDD' : props.hoverColor)};;
+  }
 `

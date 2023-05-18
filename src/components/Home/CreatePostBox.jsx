@@ -27,7 +27,7 @@ export default function CreatePostBox() {
                     <h4>Content</h4>
                     <Input textarea='true' type='text' value={content} placeholder='Hello World!' height='150px' onChange={(e) => setContent(e.target.value)} />
                     <div>
-                        <Button type='submit' disabled={title.length===0 || content.length===0} color='#7695EC'>Create</Button>
+                        <Button type='submit' disabled={title.length===0 || content.length===0} color='#7695EC' hoverColor='#6c89da'>Create</Button>
                     </div>
                 </form>
             </Wrapper>

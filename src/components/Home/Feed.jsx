@@ -10,7 +10,6 @@ import { Container } from "./CreatePostBox";
 export default function Feed() {
     const { posts } = usePosts();
     const [postsData, setPostsData] = useState([]);
-    const raw = false
 
     useEffect(() => {
         if(posts) {
@@ -18,8 +17,6 @@ export default function Feed() {
         }
     }, [posts])
     
-    console.log(posts);
-    console.log(postsData);
     return (
         <Container>
                 { posts ? (

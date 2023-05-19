@@ -1,23 +1,29 @@
 import styled from "styled-components"
-import { useSelector } from "react-redux"
-import { useDispatch } from "react-redux"
+import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import { selectUser } from "../../redux/userSlice"
-import { userLogout } from "../../redux/userSlice"
+import { useSelector, useDispatch } from "react-redux"
+import { selectUser, userLogout } from "../../redux/userSlice"
 
 export default function Header() {
-    const { name } = useSelector(selectUser)
+    let { name } = useSelector(selectUser)
+    const log = JSON.parse(localStorage.getItem("codeleap_network"))
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    if(!name){
-        navigate('/sign-up')
+    if(log) {
+        name = log.user
     }
 
-    console.log(name.length);
+    useEffect(() => {
+        if(!name) {
+            navigate('/sign-up');
+        }
+    }, [name])
 
     function logout() {
+        localStorage.removeItem("codeleap_network")
         dispatch(userLogout())
+        navigate('/sign-up')
     }
 
     return (
@@ -71,9 +77,9 @@ const Logout = styled.p`
     }
 `
 
-const Name = styled.h6`
-    color: white;
-    font-size: 18.5px;
-    font-weight: bold;
-    margin-left: 5.5px;
+const Name = styled.p`
+    color: white !important;
+    font-size: 18.5px !important;
+    font-weight: bold !important;
+    margin-left: 5.5px !important;
 `

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
@@ -10,13 +10,23 @@ import Button from "../Button";
 
 export default function SignUpContent() {
     const [username, setUsername] = useState('');
+    const log = JSON.parse(localStorage.getItem("codeleap_network"))
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if(log) {
+            dispatch(userLogin(log.user))
+            navigate('/home');
+        }
+    }, [log])
 
     function submit(e) {
         e.preventDefault();
 
         dispatch(userLogin(username))
+        const infoJSON = JSON.stringify({ user: username });
+        localStorage.setItem("codeleap_network", infoJSON);
 
         navigate('/home');
     }

@@ -1,18 +1,14 @@
 import styled from "styled-components"
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import { useSelector, useDispatch } from "react-redux"
-import { selectUser, userLogout } from "../../redux/userSlice"
+import { useDispatch } from "react-redux"
+import { userLogout } from "../../redux/userSlice"
+import getUser from "../../utils/getUser"
 
 export default function Header() {
-    let { name } = useSelector(selectUser)
-    const log = JSON.parse(localStorage.getItem("codeleap_network"))
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
-
-    if(log) {
-        name = log.user
-    }
+    const name = getUser();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         if(!name) {

@@ -9,13 +9,6 @@ import { Container } from "./CreatePostBox";
 
 export default function Feed() {
     const { posts } = usePosts();
-    const [postsData, setPostsData] = useState([]);
-
-    useEffect(() => {
-        if(posts) {
-            setPostsData(posts)
-        }
-    }, [posts])
     
     return (
         <Container>
@@ -23,15 +16,14 @@ export default function Feed() {
                     <>
                         {posts.results.map(post => {
                             return (
-                                <>
                                 <PostBox 
-                                    key={post.id} 
+                                    key={post.id}
+                                    id={post.id} 
                                     username={post.username} 
                                     title={post.title} 
                                     content={post.content} 
                                     created_at={post.created_datetime} 
                                 />
-                                </>
                             )
                         })}
                     </>

@@ -4,7 +4,7 @@ import timeSince from "../../utils/timeSince"
 
 import { Container } from "./CreatePostBox"
 
-export default function PostBox({username, created_at, title, content, key}) {
+export default function PostBox({username, created_at, title, content}) {
     return (
         <Container>
             <Wrapper>

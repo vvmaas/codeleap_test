@@ -1,17 +1,27 @@
 import { useState } from "react";
+import getUser from "../../utils/getUser";
+
+import { create } from "../../actions/api/postApi";
 
 import styled from "styled-components";
-
 import Input from "../Input";
 import Button from "../Button";
 
 export default function CreatePostBox() {
-
+    const name = getUser()
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
 
     function submit(e){
-        e.preventDefault()
+        e.preventDefault();
+
+        const data = {
+            username: name,
+            title,
+            content
+        }
+
+        create(data);
 
         setContent('');
         setTitle('');

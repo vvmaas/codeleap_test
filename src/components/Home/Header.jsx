@@ -26,7 +26,7 @@ export default function Header() {
         <Container>
             <h1>CodeLeap Network</h1>
             <UserMenu>
-                <p>Logged as<Name>{name}</Name></p>
+                <div>Logged as<Name>{name}</Name></div>
                 <Logout onClick={() => logout()}>Logout</Logout>
             </UserMenu>
         </Container>
@@ -57,7 +57,7 @@ const UserMenu = styled.div`
     flex-direction: column;
     align-items: end;
 
-    p{
+    p, div{
         color: #f4f5f6;
         font-size: 18px;
         display: flex;

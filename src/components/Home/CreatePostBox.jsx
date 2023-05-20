@@ -7,12 +7,12 @@ import styled from "styled-components";
 import Input from "../Input";
 import Button from "../Button";
 
-export default function CreatePostBox() {
+export default function CreatePostBox({posts, setPosts}) {
     const name = getUser()
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
 
-    function submit(e){
+    async function submit(e){
         e.preventDefault();
 
         const data = {
@@ -21,8 +21,12 @@ export default function CreatePostBox() {
             content
         }
 
-        create(data);
+        const newPost = await create(data);
 
+        setPosts([
+            newPost,
+            ...posts
+        ])
         setContent('');
         setTitle('');
     }

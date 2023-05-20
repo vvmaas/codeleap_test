@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-
 import usePosts from "../../hooks/api/usePosts";
 
 import PostBox from "./PostBox";
@@ -7,14 +5,15 @@ import LoadingFeed from "./LoadingFeed";
 import { Container } from "./CreatePostBox";
 
 
-export default function Feed() {
-    const { posts } = usePosts();
-    
+export default function Feed({posts, setPosts}) {
+    if(!posts) {
+        setPosts(usePosts().posts?.results);
+    }
     return (
         <Container>
                 { posts ? (
                     <>
-                        {posts.results.map(post => {
+                        {posts.map(post => {
                             return (
                                 <PostBox 
                                     key={post.id}

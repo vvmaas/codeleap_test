@@ -18,6 +18,21 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
+* {
+	/*Reset's every elements apperance*/
+	background: none repeat scroll 0 0 transparent;
+	border: medium;
+	border-spacing: 0;
+	font-weight: normal;
+	line-height: 1.42rem;
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	text-decoration: none;
+	text-indent: 0;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {

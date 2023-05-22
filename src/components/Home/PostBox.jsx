@@ -23,7 +23,7 @@ export default function PostBox({username, created_at, title, content}) {
     )
 }
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
     background: #FFFFFF;
     border: 1px solid #999999;
     border-radius: 16px;
@@ -42,7 +42,7 @@ const Wrapper = styled.div`
     }
 `
 
-const Header = styled.div`
+export const Header = styled.div`
     width: 100%;
     height: 8vh;
     min-height: 45px;
@@ -51,10 +51,11 @@ const Header = styled.div`
     border-radius: 16px 16px 0px 0px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 24px;
 `
 
-const Info = styled.div`
+export const Info = styled.div`
     width: 100%;
     padding: 0 25px;
     display: flex;
@@ -65,7 +66,7 @@ const Info = styled.div`
     font-size: 18px;
 `
 
-const Content = styled.div`
+export const Content = styled.div`
     width: 100%;
     display: flex;
     align-items: center;

@@ -10,10 +10,12 @@ export default function Button({ children, ...props }) {
 
 const StyledButton = styled.button`
   background-color: ${(props) => (props.disabled ? '#DDDDDD' : props.color)};
-  color: ${(props) => (props.disabled ? '#2a2a2a7d' : '#FFFFFF')};
+  color: ${(props) => (props.disabled ? '#2626267e' : '#FFFFFF')};
+  color: ${(props) => (props.color === '#FFFFFF' ? '#000000' : '')};
   font-weight: bold;
   font-size: 14px;
   border-radius: 8px;
+  border: ${(props) => (props.border ? props.border : '')};
   height: 3vh;
   width: 5vw;
   min-height: 30px;

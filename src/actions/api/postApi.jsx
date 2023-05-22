@@ -12,11 +12,11 @@ export async function create(body){
 }
 
 export async function update(body, id){
-    const response = await api.patch(`/${id}`, body)
+    const response = await api.patch(`/${id}/`, body)
 
     return response.data;
 }
 
 export async function erase(id){
-    await api.delete(`/${id}`)
+    await api.delete(`/${id}/`)
 }

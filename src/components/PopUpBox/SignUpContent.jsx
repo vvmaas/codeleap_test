@@ -49,11 +49,16 @@ export default function SignUpContent() {
 
 const Container = styled.div`
     padding: 25px;
+    width: 100%;
 
     form {
         display: flex;
         flex-direction: column;
         align-items: end;
+        
+        div {
+            width: 100%;
+        }
     }
 
     h4 {
@@ -62,12 +67,11 @@ const Container = styled.div`
 
     input {
         margin-bottom: 13px;
-        width: 25vw;
-        min-width: 350px;
+        width: 100%;
     }
 `
 
-const Title = styled.h1`
+export const Title = styled.h1`
     font-size: 21px;
     font-weight: bold;
     margin-bottom: 16px;

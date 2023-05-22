@@ -54,7 +54,7 @@ export const Container = styled.div`
     width: 100%;
     max-width: 800px;
     height: fit-content;
-    display: flex;
+    display: ${(props) => (props.display ? props.display : "flex")};
     flex-direction: column;
     align-items: center;
     justify-content: center;

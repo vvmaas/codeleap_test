@@ -11,7 +11,7 @@ export async function create(body){
     return response.data;
 }
 
-export async function update(body, id){
+export async function update(id, body){
     const response = await api.patch(`/${id}/`, body)
 
     return response.data;

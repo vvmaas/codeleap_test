@@ -1,5 +1,6 @@
 import styled from "styled-components"
 
+import { useState } from "react"
 import { erase } from "../../actions/api/postApi"
 
 import Button from "../Button"
@@ -7,8 +8,10 @@ import Button from "../Button"
 import { Title } from "./SignUpContent"
 
 export default function DeleteContent({id, setDisplay, setDeleting}) {
+    const [disable, setDisable] = useState(false);
 
     async function deletePost() {
+        setDisable(true)
         await erase(id);
 
         setDisplay('none');
@@ -19,10 +22,10 @@ export default function DeleteContent({id, setDisplay, setDeleting}) {
         <Container>
             <Title>Are you sure you want to delete this item?</Title>
             <Buttons>
-                <Button border="1px solid #999999" color={"#FFFFFF"} onClick={() => setDeleting(false)}>
+                <Button disabled={disable} border="1px solid #999999" color={"#FFFFFF"} onClick={() => setDeleting(false)}>
                     Cancel
                 </Button>
-                <Button color={"#FF5151"} hoverColor={"#ed4545"} onClick={() => deletePost()}>
+                <Button disabled={disable} color={"#FF5151"} hoverColor={"#ed4545"} onClick={() => deletePost()}>
                     Delete
                 </Button>
             </Buttons>

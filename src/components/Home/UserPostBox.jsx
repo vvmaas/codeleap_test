@@ -16,13 +16,15 @@ export default function UserPostBox({id, username, created_at, title, content}) 
     const [display, setDisplay] = useState('flex');
     const [editing, setEditing] = useState(false);
     const [deleting, setDeleting] = useState(false);
+    const [editedTitle, setEditedTitle] = useState('');
+    const [editedContent, setEditedContent] = useState('');
 
     return (
         <>
             <Container display={display}>
                 <Wrapper>
                     <Header>
-                        <h4>{title}</h4>
+                        <h4>{editedTitle ? editedTitle : title}</h4>
                         <Icons>
                             <MdDeleteForever cursor="pointer" onClick={() => setDeleting(true)}/>
                             <BiEdit cursor="pointer" onClick={() => setEditing(true)}/>
@@ -33,12 +35,12 @@ export default function UserPostBox({id, username, created_at, title, content}) 
                         <p>{timeSince(new Date(created_at))} ago</p>
                     </Info>
                     <Content>
-                        {content}
+                        {editedContent ? editedContent : content}
                     </Content>
                 </Wrapper>
             </Container>
                 <PopUpBox display={editing}>
-                    <EditContent id={id} title={title} content={content} setEditing={setEditing}/>
+                    <EditContent id={id} title={title} setEditedTitle={setEditedTitle} content={content} setEditedContent={setEditedContent} setEditing={setEditing}/>
                 </PopUpBox>
                 <PopUpBox display={deleting}>
                     <DeleteContent id={id} setDisplay={setDisplay} setDeleting={setDeleting}/>

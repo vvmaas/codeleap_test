@@ -39,10 +39,10 @@ export default function UserPostBox({id, username, created_at, title, content}) 
                     </Content>
                 </Wrapper>
             </Container>
-                <PopUpBox display={editing}>
+                <PopUpBox active={editing}>
                     <EditContent id={id} title={title} setEditedTitle={setEditedTitle} content={content} setEditedContent={setEditedContent} setEditing={setEditing}/>
                 </PopUpBox>
-                <PopUpBox display={deleting}>
+                <PopUpBox active={deleting}>
                     <DeleteContent id={id} setDisplay={setDisplay} setDeleting={setDeleting}/>
                 </PopUpBox>
         </>

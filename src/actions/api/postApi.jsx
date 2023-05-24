@@ -1,7 +1,7 @@
 import api from './api';
 
-export async function get(){
-    const response = await api.get('')
+export async function get(offset=0){
+    const response = await api.get(`?offset=${offset}`)
     return response.data;
 }
 

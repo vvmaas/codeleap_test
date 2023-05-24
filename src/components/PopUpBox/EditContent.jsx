@@ -27,6 +27,7 @@ export default function EditContent({id, title, content, setEditedContent, setEd
         setEditedContent(editingContent);
         setEditedTitle(editingTitle);
         setEditing(false)
+        setDisable(false);
     }
 
     return (
@@ -41,7 +42,7 @@ export default function EditContent({id, title, content, setEditedContent, setEd
                         <Button disabled={disable} border="1px solid #999999" color={"#FFFFFF"} onClick={() => setEditing(false)}>
                             Cancel
                         </Button>
-                        <Button type='submit' disabled={editingTitle.length===0 || editingContent.length===0} color='#47b960' hoverColor='#4bd769'>
+                        <Button type='submit' disabled={editingTitle.length===0 || editingContent.length===0 || disable} color='#47b960' hoverColor='#4bd769'>
                             Save
                         </Button>
                     </div>

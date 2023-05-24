@@ -12,6 +12,7 @@ export default function PopUpBox({children, ...props}) {
 }
 
 const Wrapper = styled.div`
+    z-index: 2;
     height: fit-content;
     width: 100%;
     max-width: 650px;
@@ -23,7 +24,7 @@ const Wrapper = styled.div`
 `
 
 const Container = styled.div`
-    display: ${(props) => (props.display ? "flex" : "none")};
+    display: ${(props) => (props.active ? "flex" : "none")};
     align-items: center;
     justify-content: center;
     top: 0%;

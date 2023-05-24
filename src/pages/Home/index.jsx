@@ -9,15 +9,15 @@ import CreatePostBox from "../../components/Home/CreatePostBox";
 import Feed from "../../components/Home/Feed";
 
 export default function Home() {
-    const [posts, setPosts] = useState(null);
+    const [posts, setPosts] = useState([]);
+    const [offset, setOffset] = useState(0);
     const user = getUser();
-    console.log(user);
 
     return(
         <Container>
             <Header />
-            <CreatePostBox posts={posts} setPosts={setPosts}/>
-            <Feed user={user} posts={posts} setPosts={setPosts}/>
+            <CreatePostBox offset={offset} setOffset={setOffset} posts={posts} setPosts={setPosts}/>
+            <Feed user={user} offset={offset} setOffset={setOffset} posts={posts} setPosts={setPosts}/>
         </Container>
     );
 }

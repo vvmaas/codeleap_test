@@ -3,7 +3,7 @@ import SignUpContent from "../../components/PopUpBox/SignUpContent";
 
 export default function SignUp() {
     return(
-            <PopUpBox display={true}>
+            <PopUpBox active={true}>
                 <SignUpContent />
             </PopUpBox>
     );

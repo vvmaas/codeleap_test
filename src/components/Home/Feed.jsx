@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { selectPosts, updatePosts  } from "../../redux/postsSlice";
 import { get } from "../../actions/api/postApi";
 
 import PostBox from "./PostBox";
@@ -6,41 +8,38 @@ import UserPostBox from "./UserPostBox";
 import LoadingFeed from "./LoadingFeed";
 import { Container } from "./CreatePostBox";
 
-
-export default function Feed({user, posts, setPosts, offset, setOffset}) {
+export default function Feed({user}) {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false);
+    const { posts, offset } = useSelector(selectPosts);
+    const dispatch = useDispatch();
+    console.log(posts);
 
-    async function fetchData(){
+    async function fetchData(posts, offset){
         setIsLoading(true);
         setError(null);
 
         try {
-        const response = await get(offset);
-        const data = response.results
-
-        if(!posts){
-            setPosts([...data]);
-        } else {
-            setPosts([...posts, ...data])
-        }
-        setOffset(offset + 10);
-        } catch (error) {
-            setError(error);
-        } finally {
-            setIsLoading(false);
-        }
+            const response = await get(offset);
+            const data = response.results
+    
+            return dispatch(updatePosts({posts: [...posts, ...data], offset: offset + 10}));
+            } catch (error) {
+                setError(error);
+            } finally {
+                setIsLoading(false);
+            }
     }
 
     useEffect(() => {
-        fetchData();
+        fetchData(posts, offset);
       }, []);
 
       const handleScroll = () => {
         if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isLoading) {
           return;
         }
-        fetchData();
+        fetchData(posts, offset);
       };
       
       useEffect(() => {

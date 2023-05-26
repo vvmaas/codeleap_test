@@ -1,17 +1,19 @@
 import { useState } from "react";
 import getUser from "../../utils/getUser";
-
+import { useSelector, useDispatch } from "react-redux";
+import { selectPosts, updatePosts  } from "../../redux/postsSlice";
 import { create } from "../../actions/api/postApi";
 
 import styled from "styled-components";
 import Input from "../Input";
 import Button from "../Button";
 
-export default function CreatePostBox({posts, setPosts, offset, setOffset}) {
+export default function CreatePostBox() {
     const name = getUser()
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
-    console.log(offset);
+    const { posts, offset } = useSelector(selectPosts);
+    const dispatch = useDispatch();
 
     async function submit(e){
         e.preventDefault();
@@ -24,11 +26,10 @@ export default function CreatePostBox({posts, setPosts, offset, setOffset}) {
 
         const newPost = await create(data);
 
-        setPosts([
-            newPost,
-            ...posts
-        ])
-        setOffset(offset+1)
+        dispatch(updatePosts({
+            posts: [newPost, ...posts], 
+            offset: offset + 1
+        }));
         setContent('');
         setTitle('');
     }

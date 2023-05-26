@@ -8,7 +8,7 @@ import styled from "styled-components";
 import Input from "../Input";
 import Button from "../Button";
 
-export default function CreatePostBox() {
+export default function CreatePostBox({trigger, setTrigger}) {
     const name = getUser()
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
@@ -30,6 +30,7 @@ export default function CreatePostBox() {
             posts: [newPost, ...posts], 
             offset: offset + 1
         }));
+        setTrigger(trigger + 1);
         setContent('');
         setTitle('');
     }

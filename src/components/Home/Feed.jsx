@@ -8,12 +8,12 @@ import UserPostBox from "./UserPostBox";
 import LoadingFeed from "./LoadingFeed";
 import { Container } from "./CreatePostBox";
 
-export default function Feed({user}) {
+export default function Feed({user, trigger}) {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false);
     const { posts, offset } = useSelector(selectPosts);
     const dispatch = useDispatch();
-    console.log(posts);
+    console.log(trigger);
 
     async function fetchData(posts, offset){
         setIsLoading(true);
@@ -22,6 +22,7 @@ export default function Feed({user}) {
         try {
             const response = await get(offset);
             const data = response.results
+            console.log(offset); 
     
             return dispatch(updatePosts({posts: [...posts, ...data], offset: offset + 10}));
             } catch (error) {
@@ -33,12 +34,12 @@ export default function Feed({user}) {
 
     useEffect(() => {
         fetchData(posts, offset);
-      }, []);
+      }, [0, trigger]);
 
-      const handleScroll = () => {
+      function handleScroll() {
         if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isLoading) {
           return;
-        }
+        } 
         fetchData(posts, offset);
       };
       

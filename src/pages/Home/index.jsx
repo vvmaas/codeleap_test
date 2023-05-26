@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 import getUser from "../../utils/getUser";
 
@@ -8,12 +9,13 @@ import Feed from "../../components/Home/Feed";
 
 export default function Home() {
     const user = getUser();
+    const [trigger, setTrigger] = useState(0)
 
     return(
         <Container>
             <Header />
-            <CreatePostBox />
-            <Feed user={user} />
+            <CreatePostBox trigger={trigger} setTrigger={setTrigger}/>
+            <Feed user={user} trigger={trigger}/>
         </Container>
     );
 }

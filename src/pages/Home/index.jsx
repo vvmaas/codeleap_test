@@ -5,6 +5,7 @@ import getUser from "../../utils/getUser";
 
 import Header from "../../components/Home/Header";
 import CreatePostBox from "../../components/Home/CreatePostBox";
+import Updater from "../../components/Home/Updater";
 import Feed from "../../components/Home/Feed";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
         <Container>
             <Header />
             <CreatePostBox trigger={trigger} setTrigger={setTrigger}/>
+            <Updater trigger={trigger} setTrigger={setTrigger}/>
             <Feed user={user} trigger={trigger}/>
         </Container>
     );

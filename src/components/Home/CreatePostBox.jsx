@@ -9,7 +9,7 @@ import Input from "../Input";
 import Button from "../Button";
 
 export default function CreatePostBox({trigger, setTrigger}) {
-    const name = getUser()
+    const name = getUser();
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const { posts, offset } = useSelector(selectPosts);

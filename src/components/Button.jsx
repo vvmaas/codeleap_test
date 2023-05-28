@@ -28,6 +28,6 @@ const StyledButton = styled.button`
   justify-content: center;
   cursor: ${(props) => (props.disabled ? '' : 'pointer')};
   :hover {
-    background-color: ${(props) => (props.disabled ? '#DDDDDD' : props.hoverColor)};;
+    background-color: ${(props) => (props.disabled ? '#DDDDDD' : props.hoverColor)};
   }
 `

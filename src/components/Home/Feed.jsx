@@ -13,7 +13,6 @@ export default function Feed({user, trigger}) {
     const [error, setError] = useState(false);
     const { posts, offset } = useSelector(selectPosts);
     const dispatch = useDispatch();
-    console.log(trigger);
 
     async function fetchData(posts, offset){
         setIsLoading(true);
@@ -22,7 +21,6 @@ export default function Feed({user, trigger}) {
         try {
             const response = await get(offset);
             const data = response.results
-            console.log(offset); 
     
             return dispatch(updatePosts({posts: [...posts, ...data], offset: offset + 10}));
             } catch (error) {

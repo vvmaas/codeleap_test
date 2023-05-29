@@ -42,5 +42,9 @@ export default function timeSince(date) {
       return "1 second"
     } 
 
+    if(seconds < 0) {
+      return "1 second"
+    } 
+
     return Math.floor(seconds) + " seconds";
   }

@@ -45,6 +45,10 @@ const Container = styled.div`
     h1 {
         width: 100%;
     }
+
+    @media(max-width: 700px){
+        padding: 20px;
+    }
 `
 
 const Buttons = styled.div`
@@ -53,5 +57,14 @@ const Buttons = styled.div`
     button {
         width: 110px;
         margin: 0 10px
+    }
+
+    @media(max-width: 700px){
+        margin-top: 18px;
+
+        button {
+        width: 95px;
+        margin: 0 9px
+        }
     }
 `

@@ -77,4 +77,10 @@ const Wrapper = styled.div`
     span {
         margin-right: 10px;
     }
+
+    @media(max-width: 700px) {
+        min-height: 35px;
+        max-height: 50px;
+        margin-bottom: 9px;
+    }
 `

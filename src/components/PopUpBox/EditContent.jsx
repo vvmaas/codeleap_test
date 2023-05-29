@@ -88,4 +88,14 @@ const Container = styled.div`
         margin-left: 20px;
         min-width: 100px;
     }
+
+    @media(max-width: 700px){
+        padding: 20px;
+
+        button {
+        margin-top: 5px;
+        margin-left: 15px;
+        min-width: 100px;
+    }
+    }
 `

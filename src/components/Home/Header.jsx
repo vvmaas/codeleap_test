@@ -49,6 +49,16 @@ const Container = styled.div`
         font-size: 23px;
         font-weight: bold;
     }
+
+    @media (max-width: 700px){
+        h1 {
+        width: 30vw;
+        color: white;
+        margin-left: 16px;
+        font-size: 21px;
+        font-weight: bold;
+    }
+    }
 `
 
 const UserMenu = styled.div`
@@ -61,6 +71,16 @@ const UserMenu = styled.div`
         color: #f4f5f6;
         font-size: 18px;
         display: flex;
+    }
+
+    @media (max-width: 700px) {
+        margin-right: 16px;
+
+        p, div{
+        color: #f4f5f6;
+        font-size: 16px;
+        display: flex;
+    }
     }
 `
 
@@ -78,4 +98,9 @@ const Name = styled.p`
     font-size: 18.5px !important;
     font-weight: bold !important;
     margin-left: 5.5px !important;
+
+    @media (max-width: 700px){
+        font-size: 17px !important;
+        margin-left: 5px !important;
+    }
 `

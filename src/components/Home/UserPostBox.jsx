@@ -57,4 +57,11 @@ const Icons = styled.div`
     margin-right: 24px;
     display: flex;
     justify-content: space-between;
+
+    @media(max-width: 700px){
+        font-size: 25px;
+        width: 4%;
+        min-width: 60px;
+        margin-right: 16px;
+    }
 `

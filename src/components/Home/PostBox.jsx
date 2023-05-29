@@ -40,6 +40,19 @@ export const Wrapper = styled.div`
         font-weight: bold;
         font-size: 23px;
     }
+
+    @media (max-width: 700px){
+        margin: 5px;
+        border: none;
+        border-bottom: 1px solid #999999;
+        border-radius: 0;
+        width: 100%;
+
+        h4 {
+        margin-left: 16px;
+        font-size: 20px;
+        }
+    }
 `
 
 export const Header = styled.div`
@@ -53,6 +66,16 @@ export const Header = styled.div`
     align-items: center;
     justify-content: space-between;
     margin-bottom: 24px;
+
+    h4{
+            overflow: hidden;
+        }
+
+    @media (max-width: 700px){
+        max-height: 55px;
+        border-radius: 0;
+        margin-bottom: 18px;
+    }
 `
 
 export const Info = styled.div`
@@ -64,6 +87,12 @@ export const Info = styled.div`
     margin-bottom: 16px;
     color: #777777;
     font-size: 18px;
+
+    @media (max-width: 700px){
+        font-size: 16px;
+        padding: 0 17px;
+        margin-bottom: 14px;
+    }
 `
 
 export const Content = styled.div`
@@ -76,4 +105,9 @@ export const Content = styled.div`
     font-weight: 400;
     line-height: 21px;
     white-space: pre-wrap;
+
+    @media (max-width: 700px){
+        line-height: 19px;
+        padding: 0 17px;
+    }
 `

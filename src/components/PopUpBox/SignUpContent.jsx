@@ -69,10 +69,22 @@ const Container = styled.div`
         margin-bottom: 13px;
         width: 100%;
     }
+
+    @media(max-width: 700px) {
+        padding: 20px;
+
+        h4 {
+        margin-bottom: 6px;
+        }
+    }
 `
 
 export const Title = styled.h1`
     font-size: 21px;
     font-weight: bold;
     margin-bottom: 16px;
+
+    @media(max-width: 700px) {
+        margin-bottom: 14px;
+    }
 `

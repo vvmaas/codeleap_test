@@ -28,4 +28,8 @@ const StyledTextArea = styled.textarea`
   padding: 5px;
   font-size: 17px;
   font-weight: 100;
+
+  @media(max-width: 700px) {
+    height: 90px;
+  }
 `

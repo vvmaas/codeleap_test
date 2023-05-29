@@ -21,6 +21,10 @@ const Wrapper = styled.div`
     border-radius: 16px;
     display: flex;
     justify-content: center;
+
+    @media(max-width: 700px){
+        width: 95%;
+    }
 `
 
 const Container = styled.div`

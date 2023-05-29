@@ -93,6 +93,19 @@ const Wrapper = styled.div`
     button {
         min-width: 100px;
     }
+    
+    @media(max-width: 700px) {
+        border: none;
+        border-radius: 0;
+        width: 100%;
+        padding: 16px;
+        margin: 0;
+        margin-top: 10px;
+
+        input,textarea {
+        margin-bottom: 13px;
+    }
+    }
 `
 
 const Title = styled.h1`

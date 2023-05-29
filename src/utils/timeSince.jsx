@@ -38,7 +38,7 @@ export default function timeSince(date) {
       return Math.floor(interval) + " minute";
     }
 
-    if(Math.floor(seconds) == 0) {
+    if(Math.floor(seconds) <= 1 ) {
       return "1 second"
     } 
 

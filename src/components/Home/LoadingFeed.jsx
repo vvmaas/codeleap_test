@@ -61,6 +61,14 @@ const Wrapper = styled.div`
     justify-content: flex-start;
     align-items: center;
     margin: 25px;
+
+    @media (max-width: 700px){
+        margin: 5px;
+        border: none;
+        border-bottom: 1px solid #999999;
+        border-radius: 0;
+        width: 100%;
+    }
 `
 
 const Header = styled.div`
@@ -81,6 +89,17 @@ const Header = styled.div`
         height: 23px;
         width: 40%;
     }
+
+    @media (max-width: 700px){
+        max-height: 55px;
+        border-radius: 0;
+        margin-bottom: 18px;
+
+        div {
+            margin-left: 16px;
+            height: 20px;
+        }
+    }
 `
 
 const Info = styled.div`
@@ -97,6 +116,15 @@ const Info = styled.div`
         height: 18px;
         width: 15%;
     }
+
+    @media (max-width: 700px){
+        padding: 0 17px;
+        margin-bottom: 14px;
+
+        div {
+            height: 16px;
+        }
+    }
 `
 
 const Content = styled.div`
@@ -112,5 +140,13 @@ const Content = styled.div`
         border-radius: 16px;
         height: 70px;
         width: 100%;
+    }
+
+    @media (max-width: 700px){
+        padding: 0 17px;
+
+        div {
+            height: 60px;
+        }
     }
 `

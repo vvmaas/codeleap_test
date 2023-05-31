@@ -39,6 +39,7 @@ export const Wrapper = styled.div`
         margin-left: 24px;
         font-weight: bold;
         font-size: 23px;
+        line-height: 27px;
     }
 
     @media (max-width: 700px){
@@ -51,6 +52,7 @@ export const Wrapper = styled.div`
         h4 {
         margin-left: 16px;
         font-size: 20px;
+        line-height: 24px;
         }
     }
 `
